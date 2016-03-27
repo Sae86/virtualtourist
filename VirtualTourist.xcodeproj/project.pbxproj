@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		020A6C8A1CA84B5D003F9D99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A6C891CA84B5D003F9D99 /* AppDelegate.swift */; };
-		020A6C8C1CA84B5D003F9D99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A6C8B1CA84B5D003F9D99 /* ViewController.swift */; };
+		020A6C8C1CA84B5D003F9D99 /* AddPinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A6C8B1CA84B5D003F9D99 /* AddPinViewController.swift */; };
 		020A6C8F1CA84B5D003F9D99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020A6C8D1CA84B5D003F9D99 /* Main.storyboard */; };
 		020A6C921CA84B5D003F9D99 /* VirtualTourist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 020A6C901CA84B5D003F9D99 /* VirtualTourist.xcdatamodeld */; };
 		020A6C941CA84B5D003F9D99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 020A6C931CA84B5D003F9D99 /* Assets.xcassets */; };
 		020A6C971CA84B5D003F9D99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 020A6C951CA84B5D003F9D99 /* LaunchScreen.storyboard */; };
 		020A6CA21CA84B5D003F9D99 /* VirtualTouristTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A6CA11CA84B5D003F9D99 /* VirtualTouristTests.swift */; };
 		020A6CAD1CA84B5D003F9D99 /* VirtualTouristUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020A6CAC1CA84B5D003F9D99 /* VirtualTouristUITests.swift */; };
+		02B4E5AE1CA858950018356A /* DeletePinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B4E5AD1CA858950018356A /* DeletePinViewController.swift */; };
+		02B4E5B01CA8590A0018356A /* PinCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B4E5AF1CA8590A0018356A /* PinCollectionViewController.swift */; };
+		02B4E5B21CA85B820018356A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B4E5B11CA85B820018356A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 /* Begin PBXFileReference section */
 		020A6C861CA84B5D003F9D99 /* VirtualTourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualTourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		020A6C891CA84B5D003F9D99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		020A6C8B1CA84B5D003F9D99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		020A6C8B1CA84B5D003F9D99 /* AddPinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPinViewController.swift; sourceTree = "<group>"; };
 		020A6C8E1CA84B5D003F9D99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		020A6C911CA84B5D003F9D99 /* VirtualTourist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VirtualTourist.xcdatamodel; sourceTree = "<group>"; };
 		020A6C931CA84B5D003F9D99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		020A6CA81CA84B5D003F9D99 /* VirtualTouristUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VirtualTouristUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		020A6CAC1CA84B5D003F9D99 /* VirtualTouristUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualTouristUITests.swift; sourceTree = "<group>"; };
 		020A6CAE1CA84B5D003F9D99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02B4E5AD1CA858950018356A /* DeletePinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletePinViewController.swift; sourceTree = "<group>"; };
+		02B4E5AF1CA8590A0018356A /* PinCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinCollectionViewController.swift; sourceTree = "<group>"; };
+		02B4E5B11CA85B820018356A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B4E5B21CA85B820018356A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +86,7 @@
 		020A6C7D1CA84B5D003F9D99 = {
 			isa = PBXGroup;
 			children = (
+				02B4E5B11CA85B820018356A /* MapKit.framework */,
 				020A6C881CA84B5D003F9D99 /* VirtualTourist */,
 				020A6CA01CA84B5D003F9D99 /* VirtualTouristTests */,
 				020A6CAB1CA84B5D003F9D99 /* VirtualTouristUITests */,
@@ -100,12 +108,14 @@
 			isa = PBXGroup;
 			children = (
 				020A6C891CA84B5D003F9D99 /* AppDelegate.swift */,
-				020A6C8B1CA84B5D003F9D99 /* ViewController.swift */,
+				020A6C8B1CA84B5D003F9D99 /* AddPinViewController.swift */,
 				020A6C8D1CA84B5D003F9D99 /* Main.storyboard */,
 				020A6C931CA84B5D003F9D99 /* Assets.xcassets */,
 				020A6C951CA84B5D003F9D99 /* LaunchScreen.storyboard */,
 				020A6C981CA84B5D003F9D99 /* Info.plist */,
 				020A6C901CA84B5D003F9D99 /* VirtualTourist.xcdatamodeld */,
+				02B4E5AD1CA858950018356A /* DeletePinViewController.swift */,
+				02B4E5AF1CA8590A0018356A /* PinCollectionViewController.swift */,
 			);
 			path = VirtualTourist;
 			sourceTree = "<group>";
@@ -262,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020A6C8C1CA84B5D003F9D99 /* ViewController.swift in Sources */,
+				020A6C8C1CA84B5D003F9D99 /* AddPinViewController.swift in Sources */,
+				02B4E5AE1CA858950018356A /* DeletePinViewController.swift in Sources */,
 				020A6C8A1CA84B5D003F9D99 /* AppDelegate.swift in Sources */,
 				020A6C921CA84B5D003F9D99 /* VirtualTourist.xcdatamodeld in Sources */,
+				02B4E5B01CA8590A0018356A /* PinCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +503,7 @@
 				020A6CB31CA84B5D003F9D99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		020A6CB41CA84B5D003F9D99 /* Build configuration list for PBXNativeTarget "VirtualTouristTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +512,7 @@
 				020A6CB61CA84B5D003F9D99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		020A6CB71CA84B5D003F9D99 /* Build configuration list for PBXNativeTarget "VirtualTouristUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +521,7 @@
 				020A6CB91CA84B5D003F9D99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

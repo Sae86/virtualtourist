@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AddPinViewController.swift
 //  VirtualTourist
 //
 //  Created by Sae on 3/27/16.
@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
+class AddPinViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
