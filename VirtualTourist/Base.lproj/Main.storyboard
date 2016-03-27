@@ -20,9 +20,19 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ph7-QS-BPB">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Naa-mX-1ks"/>
+                                    <constraint firstAttribute="width" constant="600" id="p9c-od-bLw"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="Virtual Tourist" id="K1O-KW-IsK"/>
                                 </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Naa-mX-1ks"/>
+                                        <exclude reference="p9c-od-bLw"/>
+                                    </mask>
+                                </variation>
                             </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uWb-Pf-PTD">
                                 <rect key="frame" x="0.0" y="72" width="600" height="528"/>
@@ -31,14 +41,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HPp-3C-N9F" firstAttribute="top" secondItem="ph7-QS-BPB" secondAttribute="bottom" constant="528" id="0dN-Df-LXm"/>
-                            <constraint firstItem="ph7-QS-BPB" firstAttribute="top" secondItem="EEv-qI-djS" secondAttribute="bottom" constant="8" id="7tx-e0-ZaX"/>
                             <constraint firstItem="HPp-3C-N9F" firstAttribute="top" secondItem="uWb-Pf-PTD" secondAttribute="bottom" id="ENJ-ce-1Yj"/>
                             <constraint firstItem="ph7-QS-BPB" firstAttribute="leading" secondItem="rbU-qi-jEr" secondAttribute="leadingMargin" constant="-20" id="Fqn-v9-czD"/>
                             <constraint firstItem="uWb-Pf-PTD" firstAttribute="leading" secondItem="rbU-qi-jEr" secondAttribute="leadingMargin" constant="-20" id="Gxg-R1-iMM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ph7-QS-BPB" secondAttribute="trailing" constant="-20" id="I0G-HH-q8G"/>
+                            <constraint firstItem="ph7-QS-BPB" firstAttribute="top" secondItem="EEv-qI-djS" secondAttribute="bottom" constant="8" id="MXK-JS-9JU"/>
+                            <constraint firstItem="ph7-QS-BPB" firstAttribute="leading" secondItem="rbU-qi-jEr" secondAttribute="leadingMargin" constant="-20" id="Uub-JA-ahH"/>
+                            <constraint firstItem="uWb-Pf-PTD" firstAttribute="top" secondItem="ph7-QS-BPB" secondAttribute="bottom" id="ZHq-cE-fKR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uWb-Pf-PTD" secondAttribute="trailing" constant="-20" id="hwt-DL-MOM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ph7-QS-BPB" secondAttribute="trailing" constant="-20" id="jgh-Eh-imY"/>
                             <constraint firstItem="uWb-Pf-PTD" firstAttribute="top" secondItem="ph7-QS-BPB" secondAttribute="bottom" id="mAJ-cz-mbP"/>
+                            <constraint firstItem="ph7-QS-BPB" firstAttribute="top" secondItem="EEv-qI-djS" secondAttribute="bottom" constant="8" id="um8-u1-w4c"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Fqn-v9-czD"/>
+                                <exclude reference="I0G-HH-q8G"/>
+                                <exclude reference="um8-u1-w4c"/>
+                                <exclude reference="mAJ-cz-mbP"/>
+                                <exclude reference="0dN-Df-LXm"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pg-cR-B3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
