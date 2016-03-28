@@ -42,6 +42,9 @@ class AddPinViewController: UIViewController, NSFetchedResultsControllerDelegate
     }()
 
 
-    func editPins(sender: AnyObject){}
+    func editPins(sender: AnyObject){
+        let editorController = storyboard!.instantiateViewControllerWithIdentifier("DeletePinViewController") as! DeletePinViewController
+        navigationController!.pushViewController(editorController, animated: true)
+    }
 }
 

@@ -18,5 +18,8 @@ class DeletePinViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = doneButton
     }
     
-    func doneEditingPins(sender: AnyObject){}
+    func doneEditingPins(sender: AnyObject){
+        let editorController = storyboard!.instantiateViewControllerWithIdentifier("DeletePinViewController") as! DeletePinViewController
+        navigationController!.pushViewController(editorController, animated: true)
+    }
 }

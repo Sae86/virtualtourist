@@ -151,6 +151,9 @@
                             <constraint firstItem="NN6-Th-nE1" firstAttribute="top" secondItem="coi-U8-xNB" secondAttribute="bottom" constant="125" id="vsj-Td-gPg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="NN6-Th-nE1" id="iMB-lx-oTf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnG-ia-7RY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

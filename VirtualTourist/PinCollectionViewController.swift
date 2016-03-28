@@ -13,6 +13,13 @@ import CoreData
 
 class PinCollectionViewController: UIViewController, UICollectionViewDelegate, NSFetchedResultsControllerDelegate {
     
+    var selectedIndexes = [NSIndexPath]()
+    var insertedIndexPaths: [NSIndexPath]!
+    var deletedIndexPaths: [NSIndexPath]!
+    var updatedIndexPaths: [NSIndexPath]!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,17 +31,19 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
     
     func configureCell(cell: PictureCell, atIndexPath indexPath: NSIndexPath) {
         
-        let color = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Color
+        let pic = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Picture
         
-        cell.color = color.value
-        
-        // If the cell is "selected" it's color panel is grayed out
-        // we use the Swift `find` function to see if the indexPath is in the array
-        
-        if let index = selectedIndexes.indexOf(indexPath) {
-            cell.colorPanel.alpha = 0.05
+        let documentsDirectoryURL: NSURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        let fullURL = documentsDirectoryURL.URLByAppendingPathComponent(pic.picturePath!)
+
+        if let data = NSData(contentsOfFile: fullURL.path!) {
+            cell.pictureView.image = UIImage(data: data)
+        }
+
+        if let _ = selectedIndexes.indexOf(indexPath) {
+            cell.pictureView.alpha = 0.05
         } else {
-            cell.colorPanel.alpha = 1.0
+            cell.pictureView.alpha = 1.0
         }
     }
     
@@ -54,7 +63,7 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ColorCell", forIndexPath: indexPath) as! ColorCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PictureCell", forIndexPath: indexPath) as! PictureCell
         
         self.configureCell(cell, atIndexPath: indexPath)
         
@@ -63,7 +72,7 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! ColorCell
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! PictureCell
         
         // Whenever a cell is tapped we will toggle its presence in the selectedIndexes array
         if let index = selectedIndexes.indexOf(indexPath) {
@@ -74,9 +83,6 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
         
         // Then reconfigure the cell
         configureCell(cell, atIndexPath: indexPath)
-        
-        // And update the buttom button
-        updateBottomButton()
     }
     
     
@@ -84,7 +90,7 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
     
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
-        let fetchRequest = NSFetchRequest(entityName: "Color")
+        let fetchRequest = NSFetchRequest(entityName: "Picture")
         fetchRequest.sortDescriptors = []
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
@@ -109,7 +115,7 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
     
     // The second method may be called multiple times, once for each Color object that is added, deleted, or changed.
     // We store the incex paths into the three arrays.
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: NSManagedObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?){
         
         switch type{
             
