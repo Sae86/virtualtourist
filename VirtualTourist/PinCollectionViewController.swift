@@ -22,7 +22,12 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {}
+        
+        fetchedResultsController.delegate = self
     }
     
     var sharedContext: NSManagedObjectContext {
@@ -31,7 +36,7 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
     
     func configureCell(cell: PictureCell, atIndexPath indexPath: NSIndexPath) {
         
-        let pic = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Picture
+        let pic = fetchedResultsController.objectAtIndexPath(indexPath) as! Picture
         
         let documentsDirectoryURL: NSURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
         let fullURL = documentsDirectoryURL.URLByAppendingPathComponent(pic.picturePath!)
@@ -51,11 +56,11 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
     // MARK: - UICollectionView
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return self.fetchedResultsController.sections?.count ?? 0
+        return fetchedResultsController.sections?.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let sectionInfo = self.fetchedResultsController.sections![section]
+        let sectionInfo = fetchedResultsController.sections![section]
         
         print("number Of Cells: \(sectionInfo.numberOfObjects)")
         return sectionInfo.numberOfObjects
@@ -65,7 +70,7 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PictureCell", forIndexPath: indexPath) as! PictureCell
         
-        self.configureCell(cell, atIndexPath: indexPath)
+        configureCell(cell, atIndexPath: indexPath)
         
         return cell
     }
@@ -143,8 +148,6 @@ class PinCollectionViewController: UIViewController, UICollectionViewDelegate, N
             break
         case .Move:
             print("Move an item. We don't expect to see this in this app.")
-            break
-        default:
             break
         }
     }

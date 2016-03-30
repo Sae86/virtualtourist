@@ -14,7 +14,9 @@ class AddPinViewController: UIViewController, NSFetchedResultsControllerDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let editButton = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "editPins:")
+        navigationItem.hidesBackButton = true
+        navigationItem.title = "Virtual Tourist"
+        let editButton : UIBarButtonItem = UIBarButtonItem(title: "Edit", style: UIBarButtonItemStyle.Plain, target: self, action: "editPins:")
         navigationItem.rightBarButtonItem = editButton
         
         do {
@@ -31,6 +33,7 @@ class AddPinViewController: UIViewController, NSFetchedResultsControllerDelegate
     lazy var fetchedResultsController: NSFetchedResultsController = {
         
         let fetchRequest = NSFetchRequest(entityName: "Pin")
+        fetchRequest.sortDescriptors = []
         
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
             managedObjectContext: self.sharedContext,
@@ -42,9 +45,10 @@ class AddPinViewController: UIViewController, NSFetchedResultsControllerDelegate
     }()
 
 
-    func editPins(sender: AnyObject){
+    func editPins(sender: UIButton) {
         let editorController = storyboard!.instantiateViewControllerWithIdentifier("DeletePinViewController") as! DeletePinViewController
-        navigationController!.pushViewController(editorController, animated: true)
+        
+        navigationController?.pushViewController(editorController, animated: false)
     }
 }
 

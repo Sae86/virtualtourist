@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FKT-O0-G0A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qx6-Vv-pce">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -9,7 +9,7 @@
         <!--Add Pin View Controller-->
         <scene sceneID="YLl-9q-knT">
             <objects>
-                <viewController id="FKT-O0-G0A" customClass="AddPinViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPinViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FKT-O0-G0A" customClass="AddPinViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EEv-qI-djS"/>
                         <viewControllerLayoutGuide type="bottom" id="HPp-3C-N9F"/>
@@ -18,55 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ph7-QS-BPB">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Naa-mX-1ks"/>
-                                    <constraint firstAttribute="width" constant="600" id="p9c-od-bLw"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Virtual Tourist" id="K1O-KW-IsK"/>
-                                </items>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Naa-mX-1ks"/>
-                                        <exclude reference="p9c-od-bLw"/>
-                                    </mask>
-                                </variation>
-                            </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uWb-Pf-PTD">
-                                <rect key="frame" x="0.0" y="72" width="600" height="528"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HPp-3C-N9F" firstAttribute="top" secondItem="ph7-QS-BPB" secondAttribute="bottom" constant="528" id="0dN-Df-LXm"/>
-                            <constraint firstItem="HPp-3C-N9F" firstAttribute="top" secondItem="uWb-Pf-PTD" secondAttribute="bottom" id="ENJ-ce-1Yj"/>
-                            <constraint firstItem="ph7-QS-BPB" firstAttribute="leading" secondItem="rbU-qi-jEr" secondAttribute="leadingMargin" constant="-20" id="Fqn-v9-czD"/>
-                            <constraint firstItem="uWb-Pf-PTD" firstAttribute="leading" secondItem="rbU-qi-jEr" secondAttribute="leadingMargin" constant="-20" id="Gxg-R1-iMM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ph7-QS-BPB" secondAttribute="trailing" constant="-20" id="I0G-HH-q8G"/>
-                            <constraint firstItem="ph7-QS-BPB" firstAttribute="top" secondItem="EEv-qI-djS" secondAttribute="bottom" constant="8" id="MXK-JS-9JU"/>
-                            <constraint firstItem="ph7-QS-BPB" firstAttribute="leading" secondItem="rbU-qi-jEr" secondAttribute="leadingMargin" constant="-20" id="Uub-JA-ahH"/>
-                            <constraint firstItem="uWb-Pf-PTD" firstAttribute="top" secondItem="ph7-QS-BPB" secondAttribute="bottom" id="ZHq-cE-fKR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uWb-Pf-PTD" secondAttribute="trailing" constant="-20" id="hwt-DL-MOM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ph7-QS-BPB" secondAttribute="trailing" constant="-20" id="jgh-Eh-imY"/>
-                            <constraint firstItem="uWb-Pf-PTD" firstAttribute="top" secondItem="ph7-QS-BPB" secondAttribute="bottom" id="mAJ-cz-mbP"/>
-                            <constraint firstItem="ph7-QS-BPB" firstAttribute="top" secondItem="EEv-qI-djS" secondAttribute="bottom" constant="8" id="um8-u1-w4c"/>
+                            <constraint firstItem="HPp-3C-N9F" firstAttribute="top" secondItem="uWb-Pf-PTD" secondAttribute="bottom" id="VVr-22-Qsd"/>
+                            <constraint firstItem="uWb-Pf-PTD" firstAttribute="top" secondItem="EEv-qI-djS" secondAttribute="bottom" id="Vhz-eP-gEu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uWb-Pf-PTD" secondAttribute="trailing" constant="-20" id="hdi-AZ-3JS"/>
+                            <constraint firstItem="uWb-Pf-PTD" firstAttribute="leading" secondItem="rbU-qi-jEr" secondAttribute="leadingMargin" constant="-20" id="rw2-CX-T7g"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Fqn-v9-czD"/>
-                                <exclude reference="I0G-HH-q8G"/>
-                                <exclude reference="um8-u1-w4c"/>
-                                <exclude reference="mAJ-cz-mbP"/>
-                                <exclude reference="0dN-Df-LXm"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="f17-2p-iEd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2pg-cR-B3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="725" y="375"/>
         </scene>
         <!--Pin Collection View Controller-->
         <scene sceneID="iPl-H2-8c4">
@@ -162,7 +130,7 @@
         <!--Delete Pin View Controller-->
         <scene sceneID="hF3-zb-01e">
             <objects>
-                <viewController id="Piv-bJ-8gU" customClass="DeletePinViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeletePinViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Piv-bJ-8gU" customClass="DeletePinViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ez0-8X-xJC"/>
                         <viewControllerLayoutGuide type="bottom" id="aY0-dg-sJi"/>
@@ -171,54 +139,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKC-GO-cVx">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Virtual Tourist" id="PN2-TK-u6e"/>
-                                </items>
-                            </navigationBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="NeF-LZ-we2">
-                                <rect key="frame" x="0.0" y="64" width="600" height="477"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="521"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6z-9D-AYP">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Pins to Delete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPT-37-kdY">
                                         <rect key="frame" x="226" y="19" width="149" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="skI-7K-TWO"/>
+                                            <constraint firstAttribute="width" constant="149" id="veD-yx-m13"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.0" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="qPT-37-kdY" firstAttribute="leading" secondItem="f6z-9D-AYP" secondAttribute="leading" constant="226" id="9Qo-58-vFE"/>
-                                    <constraint firstAttribute="trailing" secondItem="qPT-37-kdY" secondAttribute="trailing" constant="225" id="9yA-3d-GLl"/>
-                                    <constraint firstItem="qPT-37-kdY" firstAttribute="top" secondItem="f6z-9D-AYP" secondAttribute="top" constant="19" id="TDl-sv-6zK"/>
-                                    <constraint firstAttribute="bottom" secondItem="qPT-37-kdY" secondAttribute="bottom" constant="20" id="jsb-Eq-TtE"/>
+                                    <constraint firstItem="qPT-37-kdY" firstAttribute="centerY" secondItem="f6z-9D-AYP" secondAttribute="centerY" id="KAv-YP-1Ag"/>
+                                    <constraint firstItem="qPT-37-kdY" firstAttribute="centerX" secondItem="f6z-9D-AYP" secondAttribute="centerX" id="Tb6-d2-sZg"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NeF-LZ-we2" firstAttribute="top" secondItem="RKC-GO-cVx" secondAttribute="bottom" id="0gJ-Pm-ff5"/>
-                            <constraint firstItem="f6z-9D-AYP" firstAttribute="leading" secondItem="ekw-Xp-Icj" secondAttribute="leadingMargin" constant="-20" id="8CU-mf-aaL"/>
-                            <constraint firstItem="NeF-LZ-we2" firstAttribute="top" secondItem="RKC-GO-cVx" secondAttribute="bottom" id="TCp-wE-YQi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f6z-9D-AYP" secondAttribute="trailing" constant="-20" id="AKb-nC-LP2"/>
+                            <constraint firstItem="aY0-dg-sJi" firstAttribute="top" secondItem="f6z-9D-AYP" secondAttribute="bottom" id="G1w-e7-pMd"/>
+                            <constraint firstItem="f6z-9D-AYP" firstAttribute="leading" secondItem="ekw-Xp-Icj" secondAttribute="leadingMargin" constant="-20" id="HWW-md-4gb"/>
+                            <constraint firstItem="NeF-LZ-we2" firstAttribute="top" secondItem="ez0-8X-xJC" secondAttribute="bottom" id="OpK-Wm-8rW"/>
                             <constraint firstItem="NeF-LZ-we2" firstAttribute="leading" secondItem="ekw-Xp-Icj" secondAttribute="leadingMargin" constant="-20" id="YmL-sj-e7j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NeF-LZ-we2" secondAttribute="trailing" constant="-20" id="g7B-el-2Vg"/>
+                            <constraint firstItem="f6z-9D-AYP" firstAttribute="top" secondItem="NeF-LZ-we2" secondAttribute="bottom" constant="-1" id="gNq-9x-in6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NeF-LZ-we2" secondAttribute="trailing" constant="-20" id="gtW-JC-khQ"/>
                             <constraint firstItem="aY0-dg-sJi" firstAttribute="top" secondItem="NeF-LZ-we2" secondAttribute="bottom" constant="59" id="ibL-c3-XHU"/>
-                            <constraint firstItem="aY0-dg-sJi" firstAttribute="top" secondItem="f6z-9D-AYP" secondAttribute="bottom" id="mtg-bp-53d"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="f6z-9D-AYP" secondAttribute="trailing" constant="-20" id="oDb-Em-LUP"/>
-                            <constraint firstItem="f6z-9D-AYP" firstAttribute="top" secondItem="RKC-GO-cVx" secondAttribute="bottom" constant="476" id="qBP-AN-qQp"/>
-                            <constraint firstItem="RKC-GO-cVx" firstAttribute="leading" secondItem="ekw-Xp-Icj" secondAttribute="leadingMargin" constant="-20" id="r6b-Nw-PGM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RKC-GO-cVx" secondAttribute="trailing" constant="-20" id="rat-mg-n0t"/>
-                            <constraint firstItem="RKC-GO-cVx" firstAttribute="top" secondItem="ez0-8X-xJC" secondAttribute="bottom" id="vNO-8a-hV7"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6f-na-Apv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="375"/>
+            <point key="canvasLocation" x="1342" y="375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A1V-z6-Sqg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qx6-Vv-pce" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xss-Ui-iGm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FKT-O0-G0A" kind="relationship" relationship="rootViewController" id="nDU-lF-ZPh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O51-f0-IFW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
 </document>
